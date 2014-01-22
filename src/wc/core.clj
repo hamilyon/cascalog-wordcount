@@ -15,7 +15,7 @@
 
 (defn -main [src-dir output-dir]
     (?<- (hfs-textline output-dir) [?word ?count]
-            ((hfs-textline output-dir) :> ?line)
+            ((hfs-textline src-dir) :> ?line)
             (tokenise :< ?line :> ?word)
             (c/count :> ?count))
     )
